@@ -1,22 +1,17 @@
 import React from "react";
+import HomePage from "./components/HomePage";
 import "./App.css";
-
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Church In Richardson Book Room</h1>
-
-      <button>Check out a new book</button>
-      <button>Return a book</button>
-    </div>
-  );
-};
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CheckoutPage from "./components/CheckoutPage";
 
 function App() {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+      </Routes>
+    </Router>
   );
 }
 
